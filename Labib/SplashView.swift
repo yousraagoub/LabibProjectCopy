@@ -10,9 +10,11 @@ struct SplashView: View {
     @State private var isActive = false
     //Saves the chosen character
     @AppStorage("selectedCharacter") private var selectedCharacter: String?
+    @AppStorage("totalScore") private var totalScore: Int?
     //CLEAR CHACHE FROM CHARACTER....MUST BE DELETED LATER
     init() {
               UserDefaults.standard.removeObject(forKey: "selectedCharacter")
+            UserDefaults.standard.removeObject(forKey: "totalScore")
             }
     var body: some View {
         if isActive {
